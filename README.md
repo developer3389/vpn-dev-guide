@@ -186,12 +186,9 @@ This is convenient because the client and server run independently, while you ca
 
 ## 7. Set Up Go Tools in VS Code
 
-After installing Go on both machines, configure the development tools.
+After [installing Go](https://go.dev/doc/install) on both Linux machines, configure the development tools.
 
 ### Install Additional Tools
-
-> [!TIP]
-> VS Code usually offers to install the Go tools automatically when you first open a `.go` file. If it does, just click **Install All** and skip the steps below.
 
 1. Open any `.go` file.
 2. Press `F1`.
