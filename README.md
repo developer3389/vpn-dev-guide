@@ -316,6 +316,10 @@ Inside it:
 - `client` contains the client code;
 - `server` contains the server code.
 
+> [!NOTE]
+> Client IP: `192.168.0.3`  
+> Server IP: `192.168.0.4`
+
 ### Mounting on the Client Machine
 
 On the client machine, mount the remote `server` directory from the server machine.
