@@ -11,7 +11,7 @@ This document describes a development workflow where:
 
 - the VPN client runs on one machine;
 - the VPN server runs on another machine;
-- both machines are opened in Visual Studio Code via Remote - SSH;
+- both machines are opened via Remote - SSH from a third machine (your local computer running Visual Studio Code);
 - if needed, the client and server can be combined into one shared context via `sshfs` so AI can use both parts of the project during development.
 
 > [!NOTE]
