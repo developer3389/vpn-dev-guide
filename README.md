@@ -224,8 +224,6 @@ The debug configuration file is located at `.vscode/launch.json`.
 
 If the `.vscode` folder does not exist, create it in the project root.
 
-### If a Shared Repository Is Open
-
 The examples below assume the following structure:
 
 ```text
