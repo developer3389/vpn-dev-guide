@@ -353,11 +353,13 @@ As a result:
 
 To remove the mount:
 
+For server:
+
 ```bash
 fusermount -u /root/vpn/simplest-vpn/server
 ```
 
-or:
+For client:
 
 ```bash
 fusermount -u /root/vpn/simplest-vpn/client
@@ -365,11 +367,13 @@ fusermount -u /root/vpn/simplest-vpn/client
 
 If normal unmounting hangs, for example because the SSH connection was interrupted, you can use lazy unmounting:
 
+For server:
+
 ```bash
 fusermount -uz /root/vpn/simplest-vpn/server
 ```
 
-or:
+For client:
 
 ```bash
 fusermount -uz /root/vpn/simplest-vpn/client
