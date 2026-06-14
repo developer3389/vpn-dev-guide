@@ -311,11 +311,14 @@ Inside it:
 - `client` contains the client code;
 - `server` contains the server code.
 
+> [!IMPORTANT]
+Open the `/root/vpn/simplest-vpn/` folder in VS Code on both the client and the server machines.  
+By mounting the remote directories using sshfs, both instances of VS Code will treat the entire project as a single, unified workspace.
+
+### Mounting on the Client Machine
 > [!NOTE]
 > Client IP: `192.168.0.3`  
 > Server IP: `192.168.0.4`
-
-### Mounting on the Client Machine
 
 On the client machine, mount the remote `server` directory from the server machine.
 
