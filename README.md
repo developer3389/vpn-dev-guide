@@ -8,7 +8,7 @@
 > AI agents will have full access to both the client and server parts of the project and can implement features, fix bugs, and refactor code for you — all you need to do is describe what you want.
 
 ## Table of Contents
-- [Workflow and Architecture](workflow-and-architecture)
+- [Workflow and Architecture](#workflow-and-architecture)
 - [1. Install Visual Studio Code and Extensions](#1-install-visual-studio-code-and-extensions)
 - [2. Prepare SSH Access to Both Machines](#2-prepare-ssh-access-to-both-machines)
 - [3. Add Both Machines to Your SSH Config](#3-add-both-machines-to-your-ssh-config)
