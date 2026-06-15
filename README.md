@@ -408,3 +408,5 @@ Other tools worth knowing about:
 - **Gemini** (Google) — available in the web and integrated into some Google developer tools.
 
 Most of these can be used alongside VS Code even if they are not embedded in it directly — paste code into the chat, describe what you need, and bring the result back.
+
+## Happy Coding!
