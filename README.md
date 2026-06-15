@@ -322,7 +322,7 @@ On the client machine, mount the remote `server` directory from the server machi
 ```bash
 mkdir -p /root/vpn/simplest-vpn/server
 sshfs root@192.168.0.4:/root/vpn/simplest-vpn/server /root/vpn/simplest-vpn/server \
-  -o reconnect,ServerAliveInterval=3
+  -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=2
 ```
 
 ### Mounting on the Server Machine (`192.168.0.4`)
@@ -332,7 +332,7 @@ On the server machine, mount the remote `client` directory from the client machi
 ```bash
 mkdir -p /root/vpn/simplest-vpn/client
 sshfs root@192.168.0.3:/root/vpn/simplest-vpn/client /root/vpn/simplest-vpn/client \
-  -o reconnect,ServerAliveInterval=3
+  -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=2
 ```
 
 > [!IMPORTANT]
