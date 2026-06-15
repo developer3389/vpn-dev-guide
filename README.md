@@ -151,12 +151,12 @@ This means you are working directly with the files on the remote machine.
 
 ## 5. Open the Project on the Client
 
-In the remote window, select **File -> Open Folder...** and open the project directory.
+In the remote window, select **File -> Open Folder...** and open the root folder of the project: `/root/vpn/simplest-vpn`.
 
-There are two possible scenarios:
+Since you are using a monorepo structure, opening the root folder provides you with full access to the entire project context at once:
 
-- if the client and server live in separate repositories, open the client directory, for example `/root/simplest-vpn-client`;
-- if you use a shared repository, open its root, for example `/root/vpn/simplest-vpn`.
+- `/root/vpn/simplest-vpn/client`
+- `/root/vpn/simplest-vpn/server`
 
 After that, you will be able to:
 
