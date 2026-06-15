@@ -349,35 +349,12 @@ sshfs root@192.168.0.3:/root/vpn/simplest-vpn/client /root/vpn/simplest-vpn/clie
 
 ### How to Unmount
 
-To remove the mount:
+Use these commands to detach the project directories. If a standard unmount hangs due to an interrupted connection, use the **lazy** (`-uz`) option.
 
-For server:
-
-```bash
-fusermount -u /root/vpn/simplest-vpn/server
-```
-
-For client:
-
-```bash
-fusermount -u /root/vpn/simplest-vpn/client
-```
-
-If normal unmounting hangs, for example because the SSH connection was interrupted, you can use lazy unmounting:
-
-For server:
-
-```bash
-fusermount -uz /root/vpn/simplest-vpn/server
-```
-
-For client:
-
-```bash
-fusermount -uz /root/vpn/simplest-vpn/client
-```
-
-Lazy unmounting is useful when the mount point must be detached immediately while actual resource cleanup can be deferred until active references are released.
+| Target | Standard Unmount | Lazy Unmount |
+| :--- | :--- | :--- |
+| **Server** | `fusermount -u /root/vpn/simplest-vpn/server` | `fusermount -uz /root/vpn/simplest-vpn/server` |
+| **Client** | `fusermount -u /root/vpn/simplest-vpn/client` | `fusermount -uz /root/vpn/simplest-vpn/client` |
 
 ## 10. Use AI and Experiment
 
