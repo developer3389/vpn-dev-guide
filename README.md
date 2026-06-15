@@ -8,19 +8,11 @@
 > AI agents will have full access to both the client and server parts of the project and can implement features, fix bugs, and refactor code for you — all you need to do is describe what you want.
 
 ## Workflow and Architecture
-This guide describes a distributed development workflow where:
+This guide describes a distributed development workflow where after setup you will have:
 
-- The VPN client and VPN server run on **two** **separate** **remote** Linux hosts.
+- **Window 1**: VS Code connected directly to the Client machine via `Remote-SSH`.
 
-- You manage both machines from your local workstation using **two** **independent** Visual Studio Code **windows** via `Remote-SSH`.
-
-- If needed, the project directories are **combined into a single context** via `sshfs`, allowing `AI` assistants to "see" the entire system architecture at once.
-
-After setup, you will have:
-
-- **Window 1**: VS Code connected directly to the Client machine.
-
-- **Window 2**: VS Code connected directly to the Server machine.
+- **Window 2**: VS Code connected directly to the Server machine via `Remote-SSH`.
 
 - The ability to edit, run, and debug code natively on the remote hosts.
 
