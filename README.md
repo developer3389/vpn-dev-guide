@@ -294,14 +294,6 @@ On **the Server** machine (`/root/vpn/simplest-vpn/.vscode/launch.json`):
 
 If the client and server code lives on different machines, but you want the AI to see both parts of the project at once, you can use `sshfs`.
 
-### When This Makes Sense
-
-This approach is useful if:
-
-- the client and server physically live on different machines;
-- you want to open the project as a single file tree;
-- the assistant needs access to both the `client` and `server` directories.
-
 ### Install `sshfs`
 
 Run this on both machines:
@@ -354,15 +346,6 @@ sshfs root@192.168.0.3:/root/vpn/simplest-vpn/client /root/vpn/simplest-vpn/clie
 
 > [!WARNING]
 > If the local directory already contains files, they will not be deleted, but they will be shadowed by the mount point and will become visible again only after unmounting.
-
-### What This Gives You in VS Code
-
-As a result:
-
-- you can run the client in one window;
-- you can run the server in the other window;
-- the project tree on each machine can contain both parts of the system;
-- the AI assistant gets access to the full project context rather than only the local half.
 
 ### How to Unmount
 
