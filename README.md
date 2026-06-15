@@ -220,26 +220,20 @@ If autocomplete works, errors are highlighted, and imports are formatted automat
 
 ## 8. Configure Run and Debug
 
-The debug configuration file is located at `.vscode/launch.json`.
+The project requires a `.vscode/launch.json` file to enable `F5` debugging.  
+Since you are working on two separate machines, you need to create this file locally on each host.
 
-If the `.vscode` folder does not exist, create it in the project root.
+> [!IMPORTANT]
+> Although your project folder structure is identical on both machines, the `.vscode/launch.json` file is unique to each host.  
+> This ensures that when you press `F5` in the respective VS Code window, it automatically targets the correct local binary.
 
-The examples below assume the following structure:
+### Setup Instructions:
 
-```text
-/root/vpn/simplest-vpn
-  client
-  server
-```
+On each machine, create the directory: `/root/vpn/simplest-vpn/.vscode/`
 
-> [!NOTE]
-> `${workspaceFolder}` is a VS Code variable that resolves to the root folder currently open in the window.  
-> In this example, it is `/root/vpn/simplest-vpn`.  
-> Although the project structure is identical on both machines, the `.vscode/launch.json` file is specific to each host:  
-> - On the client machine, the launch.json contains only the "Run Client" configuration.
-> - On the server machine, the launch.json contains only the "Run Server" configuration.
-> 
-> This ensures that when you press `F5` in the respective VS Code window, it automatically targets the correct local binary without any further selection required.
+Inside this directory, create the `launch.json` file tailored for that specific host:
+
+On **the Client** machine (`/root/vpn/simplest-vpn/.vscode/launch.json`):
 
 #### Client Configuration
 
@@ -260,6 +254,7 @@ The examples below assume the following structure:
 }
 ```
 
+On **the Server** machine (`/root/vpn/simplest-vpn/.vscode/launch.json`):
 #### Server Configuration
 
 ```json
@@ -278,6 +273,10 @@ The examples below assume the following structure:
   ]
 }
 ```
+
+> [!NOTE]
+> `${workspaceFolder}` is a VS Code variable that resolves to the root folder open in the window (`/root/vpn/simplest-vpn/`).  
+> By keeping these files separate on each machine, you avoid configuration conflicts and enable "one-click" debugging on both the client and server.
 
 ### Running the Application
 
