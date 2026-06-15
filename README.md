@@ -7,27 +7,42 @@
 > Once you have everything set up as described in this guide, you will be able to write almost no code by hand.  
 > AI agents will have full access to both the client and server parts of the project and can implement features, fix bugs, and refactor code for you — all you need to do is describe what you want.
 
-This document describes a development workflow where:
+## Workflow and Architecture
+This guide describes a distributed development workflow where:
 
-- the VPN client runs on one machine;
-- the VPN server runs on another machine;
-- both machines are opened via Remote - SSH from a third machine (your local computer running Visual Studio Code);
-- if needed, the client and server can be combined into one shared context via `sshfs` so AI can use both parts of the project during development.
+- The VPN client and VPN server run on `two` `separate` `remote` Linux hosts.
 
-> [!NOTE]
-> This guide is written for Visual Studio Code installed on Windows.  
-> The remote machines you connect to over SSH are assumed to be Linux hosts.
+- You manage both machines from your local workstation using `two` `independent` `Visual Studio Code windows` via `Remote-SSH`.
 
-The steps below are arranged in the order that is most convenient to follow from scratch.
-
-## What You Will End Up With
+- If needed, the project directories are `combined into a single context` via `sshfs`, allowing `AI` assistants to "see" the entire system architecture at once.
 
 After setup, you will have:
 
-- one VS Code window connected to the client machine;
-- a second VS Code window connected to the server machine;
-- the ability to edit, run, and debug code directly on the remote machines;
-- if needed, a unified project context for the AI assistant.
+- **Window 1**: VS Code connected directly to the Client machine.
+
+- **Window 2**: VS Code connected directly to the Server machine.
+
+- The ability to edit, run, and debug code natively on the remote hosts.
+
+- A unified project context for your `AI` assistant (via `sshfs`).
+
+```bash
++-----------------------------------------------------------+
+|                  Local Workstation                        |
+|  +-----------------------+     +-----------------------+  |
+|  |  VS Code Window 1     |     |  VS Code Window 2     |  |
+|  |   (VPN Client)        |     |   (VPN Server)        |  |
+|  +-----------+-----------+     +-----------+-----------+  |
+|              |                             |              |
+|        Remote-SSH (22)               Remote-SSH (22)      |
+|              |                             |              |
++--------------|-----------------------------|--------------+
+               |                             |
+      +--------v--------+           +--------v--------+
+      |  Remote Linux   |           |  Remote Linux   |
+      |     Client      <-- sshfs -->     Server      |
+      +-----------------+           +-----------------+
+```
 
 The examples below use these addresses:
 
