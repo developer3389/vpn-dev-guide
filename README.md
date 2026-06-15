@@ -233,7 +233,13 @@ The examples below assume the following structure:
 ```
 
 > [!NOTE]
-> `${workspaceFolder}` is a VS Code variable that resolves to the root folder currently open in the window. In this example, it is `/root/vpn/simplest-vpn`.
+> `${workspaceFolder}` is a VS Code variable that resolves to the root folder currently open in the window.  
+> In this example, it is `/root/vpn/simplest-vpn`.  
+> Although the project structure is identical on both machines, the `.vscode/launch.json` file is specific to each host:  
+> - On the client machine, the launch.json contains only the "Run Client" configuration.
+> - On the server machine, the launch.json contains only the "Run Server" configuration.
+> 
+> This ensures that when you press `F5` in the respective VS Code window, it automatically targets the correct local binary without any further selection required.
 
 #### Client Configuration
 
