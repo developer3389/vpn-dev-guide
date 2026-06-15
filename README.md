@@ -315,27 +315,22 @@ Inside it:
 - `client` contains the client code;
 - `server` contains the server code.
 
-> [!IMPORTANT]
-Open the `/root/vpn/simplest-vpn/` folder in VS Code on both the client and the server machines.  
-By mounting the remote directories using sshfs, both instances of VS Code will treat the entire project as a single, unified workspace.
-
-### Mounting on the Client Machine
-> [!NOTE]
-> Client IP: `192.168.0.3`  
-> Server IP: `192.168.0.4`
+### Mounting on the Client Machine (`192.168.0.3`)
 
 On the client machine, mount the remote `server` directory from the server machine.
 
 ```bash
+mkdir -p /root/vpn/simplest-vpn/server
 sshfs root@192.168.0.4:/root/vpn/simplest-vpn/server /root/vpn/simplest-vpn/server \
   -o reconnect,ServerAliveInterval=3
 ```
 
-### Mounting on the Server Machine
+### Mounting on the Server Machine (`192.168.0.4`)
 
 On the server machine, mount the remote `client` directory from the client machine.
 
 ```bash
+mkdir -p /root/vpn/simplest-vpn/client
 sshfs root@192.168.0.3:/root/vpn/simplest-vpn/client /root/vpn/simplest-vpn/client \
   -o reconnect,ServerAliveInterval=3
 ```
@@ -346,6 +341,10 @@ sshfs root@192.168.0.3:/root/vpn/simplest-vpn/client /root/vpn/simplest-vpn/clie
 
 > [!WARNING]
 > If the local directory already contains files, they will not be deleted, but they will be shadowed by the mount point and will become visible again only after unmounting.
+
+> [!NOTE]
+> Open the `/root/vpn/simplest-vpn/` folder in VS Code on both hosts.  
+> Now, each instance of the editor will see the "neighbor's" files as if they were stored locally.
 
 ### How to Unmount
 
