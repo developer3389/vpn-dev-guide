@@ -7,6 +7,19 @@
 > Once you have everything set up as described in this guide, you will be able to write almost no code by hand.  
 > AI agents will have full access to both the client and server parts of the project and can implement features, fix bugs, and refactor code for you — all you need to do is describe what you want.
 
+## Table of Contents
+
+- [1. Install Visual Studio Code and Extensions](#1-install-visual-studio-code-and-extensions)
+- [2. Prepare SSH Access to Both Machines](#2-prepare-ssh-access-to-both-machines)
+- [3. Add Both Machines to Your SSH Config](#3-add-both-machines-to-your-ssh-config)
+- [4. Connect to the Client from VS Code](#4-connect-to-the-client-from-vs-code)
+- [5. Open the Project on the Client](#5-open-the-project-on-the-client)
+- [6. Open the Second Machine in a Second Window](#6-open-the-second-machine-in-a-second-window)
+- [7. Set Up Go Tools in VS Code](#7-set-up-go-tools-in-vs-code)
+- [8. Configure Run and Debug](#8-configure-run-and-debug)
+- [9. How to Combine Client and Server into One AI Context](#9-how-to-combine-client-and-server-into-one-ai-context)
+- [10. Use AI and Experiment](#10-use-ai-and-experiment)
+
 ## Workflow and Architecture
 This guide describes a distributed development workflow where after setup you will have:
 
@@ -42,23 +55,6 @@ The examples below use these addresses:
 - server: `192.168.0.4`.
 
 Replace them with the actual IP addresses of your machines.
-
----
-
-## Table of Contents
-
-- [1. Install Visual Studio Code and Extensions](#1-install-visual-studio-code-and-extensions)
-- [2. Prepare SSH Access to Both Machines](#2-prepare-ssh-access-to-both-machines)
-- [3. Add Both Machines to Your SSH Config](#3-add-both-machines-to-your-ssh-config)
-- [4. Connect to the Client from VS Code](#4-connect-to-the-client-from-vs-code)
-- [5. Open the Project on the Client](#5-open-the-project-on-the-client)
-- [6. Open the Second Machine in a Second Window](#6-open-the-second-machine-in-a-second-window)
-- [7. Set Up Go Tools in VS Code](#7-set-up-go-tools-in-vs-code)
-- [8. Configure Run and Debug](#8-configure-run-and-debug)
-- [9. How to Combine Client and Server into One AI Context](#9-how-to-combine-client-and-server-into-one-ai-context)
-- [10. Use AI and Experiment](#10-use-ai-and-experiment)
-
----
 
 ## 1. Install Visual Studio Code and Extensions
 
