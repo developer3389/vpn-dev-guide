@@ -10,11 +10,11 @@
 ## Workflow and Architecture
 This guide describes a distributed development workflow where:
 
-- The VPN client and VPN server run on `two` `separate` `remote` Linux hosts.
+- The VPN client and VPN server run on **two** **separate** **remote** Linux hosts.
 
-- You manage both machines from your local workstation using `two` `independent` Visual Studio Code `windows` via `Remote-SSH`.
+- You manage both machines from your local workstation using **two** **independent** Visual Studio Code **windows** via `Remote-SSH`.
 
-- If needed, the project directories are `combined into a single context` via `sshfs`, allowing `AI` assistants to "see" the entire system architecture at once.
+- If needed, the project directories are **combined into a single context** via `sshfs`, allowing `AI` assistants to "see" the entire system architecture at once.
 
 After setup, you will have:
 
