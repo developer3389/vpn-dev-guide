@@ -168,7 +168,7 @@ Host vpn-server
 
 After that, you will see readable names like `vpn-client` and `vpn-server` in the connection list.
 
-### 4. Preparing Project Directories
+## 4. Preparing Project Directories
 
 1. Clone project into `/root/vpn/simplest-vpn`:
 ```bash
