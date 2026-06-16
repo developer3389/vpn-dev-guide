@@ -33,7 +33,8 @@ This guide describes a distributed development workflow where after setup you wi
 
 - A **unified project context** for your `AI` assistant (via `sshfs`).
 
-```bash
+### Bare-Metal Deployment
+```plain
 +-----------------------------------------------------------+
 |                  Local Workstation                        |
 |  +-----------------------+     +-----------------------+  |
@@ -49,6 +50,35 @@ This guide describes a distributed development workflow where after setup you wi
       |  Remote Linux   |           |  Remote Linux   |
       |     Client      <-- sshfs -->     Server      |
       +-----------------+           +-----------------+
+```
+
+### Hypervisor-Based Deployment
+```plain
++-------------------------------------------------------------------+
+|                         Local Workstation                         |
+|                                                                   |
+|   +-----------------------+           +-----------------------+   |
+|   |   VS Code Window 1    |           |   VS Code Window 2    |   |
+|   |     (VPN Client)      |           |     (VPN Server)      |   |
+|   +-----------+-----------+           +-----------+-----------+   |
+|               |                                   |               |
+|         Remote-SSH (22)                     Remote-SSH (22)       |
+|               |                                   |               |
+|   +-----------v-----------------------------------v-----------+   |
+|   |                    HyperV / VirtualBox                    |   |
+|   |                                                           |   |
+|   |  +-----------------+               +-----------------+    |   |
+|   |  |   VM 1 (Linux)  |               |    VM 2 (Linux) |    |   |
+|   |  |     Client      <---- sshfs ---->      Server     |    |   |
+|   |  +--------+--------+               +--------+--------+    |   |
+|   +-----------|-----------------------------|-----------------+   |
+|               |                             |                     |
+|        Bridged (vNIC)                Bridged (vNIC)               |
++---------------|-----------------------------|---------------------+
+                |                             |
+          +-----v-----------------------------v-----+
+          |              Real Router DHCP           |
+          +-----------------------------------------+
 ```
 
 The examples below use these addresses:
