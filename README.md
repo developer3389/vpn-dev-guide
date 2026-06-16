@@ -65,12 +65,12 @@ This guide describes a distributed development workflow where after setup you wi
 |         Remote-SSH (22)                     Remote-SSH (22)       |
 |               |                                   |               |
 |   +-----------v-----------------------------------v-----------+   |
-|   |                    HyperV / VirtualBox                    |   |
-|   |                                                           |   |
-|   |  +-----------------+               +-----------------+    |   |
-|   |  |   VM 1 (Linux)  |               |    VM 2 (Linux) |    |   |
-|   |  |     Client      <---- sshfs ---->      Server     |    |   |
-|   |  +--------+--------+               +--------+--------+    |   |
+|   |           |         HyperV / VirtualBox       |           |   |
+|   |           |                                   |           |   |
+|   |  +--------v--------+                 +--------v--------+  |   |
+|   |  |   VM 1 (Linux)  |                 |    VM 2 (Linux) |  |   |
+|   |  |     Client      <----- sshfs ----->      Server     |  |   |
+|   |  +--------+--------+                 +--------+--------+  |   |
 |   +-----------|---------------------------------|-------------+   |
 |               |                                 |                 |
 |        Bridged (vNIC)                    Bridged (vNIC)           |
