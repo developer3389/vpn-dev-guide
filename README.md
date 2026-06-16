@@ -182,7 +182,7 @@ cd simplest-vpn
 #### For server:
 ```bash
 # Create directory and go into it
-mkdir server && cd server
+mkdir -p server && cd server
 
 # Move server.go from the cloned repository to the current directory
 mv ../server.go .
@@ -194,7 +194,7 @@ go mod init server && go mod tidy
 #### For client:
 ```bash
 # Create directory and go into it
-mkdir client && cd client
+mkdir -p client && cd client
 
 # Move client.go from the cloned repository to the current directory
 mv ../client.go .
