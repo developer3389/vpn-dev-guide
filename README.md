@@ -12,13 +12,14 @@
 - [1. Install Visual Studio Code and Extensions](#1-install-visual-studio-code-and-extensions)
 - [2. Prepare SSH Access to Both Machines](#2-prepare-ssh-access-to-both-machines)
 - [3. Add Both Machines to Your SSH Config](#3-add-both-machines-to-your-ssh-config)
-- [4. Connect to the Client from VS Code](#4-connect-to-the-client-from-vs-code)
-- [5. Open the Project on the Client](#5-open-the-project-on-the-client)
-- [6. Open the Second Machine in a Second Window](#6-open-the-second-machine-in-a-second-window)
-- [7. Set Up Go Tools in VS Code](#7-set-up-go-tools-in-vs-code)
-- [8. Configure Run and Debug](#8-configure-run-and-debug)
-- [9. How to Combine Client and Server into One AI Context](#9-how-to-combine-client-and-server-into-one-ai-context)
-- [10. Use AI and Experiment](#10-use-ai-and-experiment)
+- [4. Preparing Project Directories](#4-preparing-project-directories)
+- [5. Connect to the Client from VS Code](#5-connect-to-the-client-from-vs-code)
+- [6. Open the Project on the Client](#6-open-the-project-on-the-client)
+- [7. Open the Second Machine in a Second Window](#7-open-the-second-machine-in-a-second-window)
+- [8. Set Up Go Tools in VS Code](#8-set-up-go-tools-in-vs-code)
+- [9. Configure Run and Debug](#9-configure-run-and-debug)
+- [10. How to Combine Client and Server into One AI Context](#10-how-to-combine-client-and-server-into-one-ai-context)
+- [11. Use AI and Experiment](#11-use-ai-and-experiment)
 
 ---
 
@@ -167,7 +168,42 @@ Host vpn-server
 
 After that, you will see readable names like `vpn-client` and `vpn-server` in the connection list.
 
-## 4. Connect to the Client from VS Code
+### 4. Preparing Project Directories
+
+1. Clone project into `/root/vpn/simplest-vpn`:
+```bash
+mkdir -p /root/vpn && cd /root/vpn
+git clone https://github.com/developer3389/simplest-vpn.git
+cd simplest-vpn
+```
+
+2. In directory `simplest-vpn`, perform the following actions:
+
+#### For server:
+```bash
+# Create directory and go into it
+mkdir server && cd server
+
+# Move server.go from the cloned repository to the current directory
+mv ../server.go .
+
+# Init golang environment
+go mod init server && go mod tidy
+```
+
+#### For client:
+```bash
+# Create directory and go into it
+mkdir client && cd client
+
+# Move client.go from the cloned repository to the current directory
+mv ../client.go .
+
+# Init golang environment
+go mod init client && go mod tidy
+```
+
+## 5. Connect to the Client from VS Code
 
 1. Press `F1`.
 2. Select **Remote-SSH: Connect to Host...**.
@@ -184,7 +220,7 @@ SSH: vpn-client
 
 This means you are working directly with the files on the remote machine.
 
-## 5. Open the Project on the Client
+## 6. Open the Project on the Client
 
 In the remote window, select **File -> Open Folder...** and open the root folder of the project: `/root/vpn/simplest-vpn`.
 
@@ -200,7 +236,7 @@ After that, you will be able to:
 - debug the application;
 - work with Git as if the project were local.
 
-## 6. Open the Second Machine in a Second Window
+## 7. Open the Second Machine in a Second Window
 
 Once the client window is already open:
 
@@ -219,7 +255,7 @@ Window 2 -> VPN Server
 
 This is convenient because the client and server run independently, while you can change code in both at the same time.
 
-## 7. Set Up Go Tools in VS Code
+## 8. Set Up Go Tools in VS Code
 
 After [installing Go](https://go.dev/doc/install) on both Linux machines, configure the development tools.
 
@@ -253,7 +289,7 @@ func main() {
 
 If autocomplete works, errors are highlighted, and imports are formatted automatically, then the environment is configured correctly.
 
-## 8. Configure Run and Debug
+## 9. Configure Run and Debug
 
 The project requires a `.vscode/launch.json` file to enable `F5` debugging.  
 Since you are working on two separate machines, you need to create this file locally on each host.
@@ -318,7 +354,7 @@ On **the Server** machine (`/root/vpn/simplest-vpn/.vscode/launch.json`):
 - `F5` starts the application with the debugger attached;
 - `Ctrl+F5` starts the application without the debugger.
 
-## 9. How to Combine Client and Server into One AI Context
+## 10. How to Combine Client and Server into One AI Context
 
 If the client and server code lives on different machines, but you want the AI to see both parts of the project at once, you can use `sshfs`.
 
@@ -383,7 +419,7 @@ Use these commands to detach the project directories. If a standard unmount hang
 | **Server** | `fusermount -u /root/vpn/simplest-vpn/server` | `fusermount -uz /root/vpn/simplest-vpn/server` |
 | **Client** | `fusermount -u /root/vpn/simplest-vpn/client` | `fusermount -uz /root/vpn/simplest-vpn/client` |
 
-## 10. Use AI and Experiment
+## 11. Use AI and Experiment
 
 > [!IMPORTANT]
 > **Do not waste time on manual boilerplate work.**
