@@ -1,4 +1,4 @@
-# Building custom VPN-protocol in VS Code: Modern Workflows & AI Agents
+# Building own VPN-protocol in VS Code: Modern Workflows & AI Agents
 
 > [!NOTE]  
 > This guide is part of the [simplest-vpn](https://github.com/developer3389/simplest-vpn) project — a minimalist VPN proof of concept written in Go in roughly 200 lines of code.
