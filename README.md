@@ -1,4 +1,4 @@
-# VPN Development in Visual Studio Code with Golang
+# Building a Go VPN in VS Code: Modern Workflows & AI Agents
 
 > [!NOTE]  
 > This guide is part of the [simplest-vpn](https://github.com/developer3389/simplest-vpn) project — a minimalist VPN proof of concept written in Go in roughly 200 lines of code.
@@ -24,7 +24,7 @@
 - [8. Set Up Go Tools in VS Code](#8-set-up-go-tools-in-vs-code)
 - [9. Configure Run and Debug](#9-configure-run-and-debug)
 - [10. How to Combine Client and Server into One AI Context](#10-how-to-combine-client-and-server-into-one-ai-context)
-- [11. Use AI and Experiment](#11-use-ai-and-experiment)
+- [11. Use AI-agents and Experiment](#11-use-ai-agents-and-experiment)
 
 ---
 
@@ -424,24 +424,41 @@ Use these commands to detach the project directories. If a standard unmount hang
 | **Server** | `fusermount -u /root/vpn/simplest-vpn/server` | `fusermount -uz /root/vpn/simplest-vpn/server` |
 | **Client** | `fusermount -u /root/vpn/simplest-vpn/client` | `fusermount -uz /root/vpn/simplest-vpn/client` |
 
-## 11. Use AI and Experiment
+## 11. Use AI-agents and Experiment
 
 > [!IMPORTANT]
 > **Do not waste time on manual boilerplate work.**
 > Use AI during development, let it handle routine tasks, and spend your energy on ideas, experiments, and system design.
 
-### AI Assistants Worth Knowing About
+## AI Coding Agents & IDEs
 
-**GitHub Copilot** is the most natural choice when working in VS Code. It is built directly into the editor and supports an agent mode where it can read your project, suggest multi-file changes, run commands, and iterate on the result. Install it from the Extensions panel and sign in with your GitHub account.
+A selection of AI-powered IDEs, coding agents, and VS Code extensions worth knowing about.
 
-Other tools worth knowing about:
+| Tool                   | Type                         | Agentic coding | IDE / Integration               | Open source | Model flexibility | Best suited for                                |
+| ---------------------- | ---------------------------- | :------------: | ------------------------------- | :---------: | :---------------: | ---------------------------------------------- |
+| **Cursor**             | AI IDE                       |        ✅       | Standalone IDE                  |      ❌      |         ⚠️        | Full-project agentic development               |
+| **Windsurf**           | AI IDE                       |        ✅       | Standalone IDE                  |      ❌      |         ⚠️        | Autonomous multi-step coding                   |
+| **Zed**                | AI IDE                       |        ✅       | Standalone editor               |      ✅      |         ✅         | Fast, lightweight agentic development          |
+| **GitHub Copilot**     | VS Code extension / platform |        ✅       | VS Code, JetBrains, GitHub, CLI |      ❌      |         ⚠️        | General-purpose development & GitHub workflows |
+| **Claude Code**        | Coding agent                 |        ✅       | CLI + IDE integrations          |      ❌      |         ❌         | Complex refactoring and large codebases        |
+| **Cline**              | VS Code agent                |        ✅       | VS Code                         |      ✅      |         ✅         | Autonomous coding with full tool access        |
+| **Roo Code**           | VS Code agent                |        ✅       | VS Code                         |      ✅      |         ✅         | Highly customizable agent workflows            |
+| **Gemini Code Assist** | IDE assistant / agent        |        ✅       | VS Code, JetBrains, Cloud       |      ❌      |         ⚠️        | Large-context development and Google Cloud     |
+| **Amazon Q Developer** | IDE assistant / agent        |        ✅       | VS Code, JetBrains, CLI         |      ❌      |         ⚠️        | AWS development and code transformation        |
+| **Continue**           | AI coding assistant          |        ✅       | VS Code, JetBrains              |      ✅      |         ✅         | Model-agnostic and customizable workflows      |
 
-- **Cursor** — a VS Code fork with deep AI integration built in from the start, popular for agent-style development;
-- **Windsurf** — another AI-first editor based on VS Code, focused on multi-step autonomous tasks;
-- **Claude** (Anthropic) — a powerful general-purpose AI that works well for architecture discussions, code review, and writing documentation, available via the web or API;
-- **ChatGPT** (OpenAI) — widely used for explaining concepts, debugging ideas, and generating boilerplate, available via the web or API;
-- **Gemini** (Google) — available in the web and integrated into some Google developer tools.
+### Quick guide
 
-Most of these can be used alongside VS Code even if they are not embedded in it directly — paste code into the chat, describe what you need, and bring the result back.
+* **Cursor** — a strong all-in-one choice if you want an AI-first IDE with autonomous agents.
+* **Windsurf** — similar AI-first approach, with **Cascade** as its main agentic interface.
+* **GitHub Copilot** — the natural choice if your workflow already revolves around GitHub and VS Code.
+* **Claude Code** — particularly strong for repository-wide reasoning, refactoring, debugging, and terminal-driven workflows.
+* **Cline** / **Roo Code** — good choices when you want an agent inside VS Code with extensive control over models, tools, and permissions.
+* **Gemini Code Assist** — worth considering for very large codebases and Google Cloud-oriented development.
+* **Continue** — a good option when you want to choose your own models and keep the AI layer relatively open and customizable.
+* **Zed** — interesting if performance and a lightweight native editor are priorities.
+
+> [!NOTE]
+> The distinction between an *AI IDE*, *coding agent*, and *IDE extension* is becoming increasingly blurred. Modern tools such as GitHub Copilot, Claude Code, Cline, and Roo Code can perform multi-step tasks, modify multiple files, execute commands, run tests, and iterate on their own rather than merely providing autocomplete.
 
 ## Happy Coding!
