@@ -3,6 +3,11 @@
 > [!NOTE]  
 > This guide is part of the [simplest-vpn](https://github.com/developer3389/simplest-vpn) project — a minimalist VPN proof of concept written in Go in roughly 200 lines of code.
 
+> [!CAUTION]
+> **Important Note on Encryption:**  
+> Users should approach encryption with extreme caution, as errors in cryptography implementation or key management can completely compromise the confidentiality of their traffic.  
+> We strongly recommend thoroughly **reviewing written code using modern AI agents** before deploying a user-defined VPN in a hostile environment.
+
 > [!TIP]  
 > Once you have everything set up as described in this guide, you will be able to write almost no code by hand.  
 > AI agents will have full access to both the client and server parts of the project and can implement features, fix bugs, and refactor code for you — all you need to do is describe what you want.
