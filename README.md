@@ -5,7 +5,7 @@
 
 > [!CAUTION]
 > **Important Note on Encryption:**  
-> You should approach encryption with extreme caution, as errors in cryptography implementation or key management can completely compromise the confidentiality of their traffic.  
+> You should approach encryption with extreme caution, as errors in cryptography implementation or key management can completely compromise the confidentiality of your traffic.  
 > We strongly recommend thoroughly **reviewing written code using modern AI agents** before deploying a user-defined VPN in a hostile environment.
 
 > [!TIP]  
